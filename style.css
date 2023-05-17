@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.sidebar {
+    height: 100%;
+    width: 240px;
+    background: #11101d;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 6px 14px;
+}
+
+.logo {
+    color: #fff;
+    height: 50px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.code {
+    font-size: 28px;
+    margin-right: 5px;
+}
+
+.logo_name {
+    font-size: 20px;
+    font-weight: 400;
+}
