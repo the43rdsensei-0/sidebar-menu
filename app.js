@@ -10,4 +10,3 @@ searchBtn.addEventListener('click', () => {
     sidebar.classList.toggle('active');
 })
 
-console.log(searchBtn);

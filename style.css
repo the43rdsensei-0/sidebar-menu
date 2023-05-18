@@ -14,12 +14,17 @@ body {
 
 .sidebar {
     height: 100%;
-    width: 280px;
+    width: 78px;
     background: #11101d;
     position: fixed;
     top: 0;
     left: 0;
     padding: 6px 14px;
+    transition: all 0.4s ease;
+}
+
+.active {
+    width: 280px;
 }
 
 .logo_content {
@@ -34,6 +39,12 @@ body {
     display: flex;
     width: 100%;
     align-items: center;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.active .logo {
+    opacity: 1;
 }
 
 .code {
@@ -46,11 +57,20 @@ body {
     font-weight: 400;
 }
 
-#btn {
+.sidebar #btn {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
     height: 25px;
     width: 25px;
     font-size: 20px;
     color: #fff;
+}
+
+.active #btn {
+    left: 85%;
 }
 
 .sidebar ul {
@@ -63,32 +83,32 @@ body {
     margin-bottom: 20px !important;
 }
 
-#searchbtn {
+/* #searchbtn {
     width: -moz-max-content;
     width: -webkit-max-content;
     width: max-content;
-}
+} */
 
 #searchbtn .icon {
     position: relative;
+   
 }
 
 .sidebar ul li {
     height: 50px;
     width: 100%;
     list-style: none;
-    margin: 0 5px;
     position: relative;
     display: flex;
+    margin-top: 10px;
 }
 
 .sidebar ul li .tooltip {
-    border: 1px solid red;
     position: absolute;
     width: 122px;
     height: 35px;
     background: #fff;
-    left: 122px;
+    left: 70px;
     top: 0;
     transform: translateY(-50%);
     display: flex;
@@ -107,6 +127,21 @@ body {
     opacity: 1;
 }
 
+.active ul li .tooltip {
+    display: none;
+}
+
+.sidebar .links_name {
+    display: none;
+    pointer-events: none;  
+}
+
+.active .links_name {
+    display: block;
+    pointer-events: auto;
+    margin-left: 15px
+}
+
 .sidebar ul li input {
     position: absolute;
     width: 100%;
@@ -117,6 +152,51 @@ body {
     color: #fff;
     outline: none;
     border: none;
+}
+
+.sidebar ul li input::-webkit-input-placeholder {
+    opacity: 0;
+}
+
+.sidebar ul li input::-moz-placeholder {
+    opacity: 0;
+}
+
+.sidebar ul li input:-ms-input-placeholder {
+    opacity: 0;
+}
+
+.sidebar ul li input::-ms-input-placeholder {
+    opacity: 0;
+}
+
+.sidebar ul li input::placeholder {
+    opacity: 0;
+}
+
+.active ul li input::-webkit-input-placeholder {
+    opacity: 1;
+}
+
+.active ul li input::-moz-placeholder {
+    opacity: 1;
+}
+
+.active ul li input:-ms-input-placeholder {
+    opacity: 1;
+}
+
+.active ul li input::-ms-input-placeholder {
+    opacity: 1;
+}
+
+.active ul li input::placeholder {
+    opacity: 1;
+}
+
+.sidebar ul li input:hover {
+    background-color: #fff;
+    color: #1d1b31 !important;
 }
 
 .searchbar .icon {
@@ -131,9 +211,15 @@ body {
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
     text-decoration: none;
     transition: all .4s ease;
     border-radius: 8px;
+    white-space: nowrap;
+}
+
+.active ul li a {
+    justify-content: normal;
 }
 
 .sidebar ul li a:hover  {
@@ -142,12 +228,11 @@ body {
 }
 
 .sidebar .icon {
-    margin-right: 20px;
+    margin: 10px;
     height: 20px;
     min-width: 20px;
     border-radius: 12px;
     text-align: center;
-    margin-left: 10px;
 }
 
 .profile_content {
