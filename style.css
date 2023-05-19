@@ -21,6 +21,8 @@ body {
     left: 0;
     padding: 6px 14px;
     transition: all 0.4s ease;
+    border-right: 1px solid #1d1b31;
+    z-index: 111111;
 }
 
 .active {
@@ -83,11 +85,10 @@ body {
     margin-bottom: 20px !important;
 }
 
-/* #searchbtn {
-    width: -moz-max-content;
-    width: -webkit-max-content;
-    width: max-content;
-} */
+.active #searchbtn:hover {
+    background: #1d1b31;
+    color: #fff;
+}
 
 #searchbtn .icon {
     position: relative;
@@ -254,6 +255,14 @@ body {
     display: flex;
     align-items: center;
     height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.active .profile_details {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .profile_details img {
@@ -279,7 +288,81 @@ body {
 #log_out {
     position: absolute;
     bottom: 5px;
-    left: 88%;
+    left: 50%;
     font-size: 22px;
-    transform: translateY(-50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    cursor: pointer;
+}
+
+.active #log_out {
+    left: 88%;
+}
+
+.container {
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 78px);
+    left: 78px;
+    transition: all .4s ease;
+}
+
+.active ~ .container {
+    width: calc(100% - 280px);
+    left: 280px;
+}
+
+header {
+    padding: 25px;
+    /* text-align: center; */
+    background: #11101d;
+    color: #fff;
+}
+
+.grid_container {
+    display: grid;
+    height: calc(100vh - 73px);
+    padding: 25px;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 200px 200px 200px;
+    background: #1d1b31;
+    position: relative;
+    z-index: 99999;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.box:nth-child(1) {
+    background: #b9a16b;
+}
+.box:nth-child(2) {
+    background: #7aac2e;
+}
+.box:nth-child(3) {
+    background: #f7bf6b;
+}
+.box:nth-child(4) {
+    background: #465153;
+}
+.box:nth-child(5) {
+    background: #a5a5a5;
+}
+.box:nth-child(6) {
+    background: #aa5cdb;
+}
+.box:nth-child(7) {
+    background: #9adcd0;
+}
+.box:nth-child(8) {
+    background: #325568;
+}
+.box:nth-child(9) {
+    background: #6e544d;
 }
