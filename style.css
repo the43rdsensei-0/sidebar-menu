@@ -85,10 +85,10 @@ body {
     margin-bottom: 20px !important;
 }
 
-.active #searchbtn:hover {
+/* .active #searchbtn:hover {
     background: #1d1b31;
     color: #fff;
-}
+} */
 
 #searchbtn .icon {
     position: relative;
@@ -153,7 +153,25 @@ body {
     color: #fff;
     outline: none;
     border: none;
+    pointer-events: none;
+    /* border: 1px solid red; */
 }
+
+.active ul li input {
+    pointer-events: visible;
+}
+
+.sidebar ul li input:hover {
+    background: #1d1b31 !important;
+    color: #fff !important;
+}
+
+.active ul li input:hover {
+    background: #1d1b31 !important;
+    color: #fff !important;
+}
+
+
 
 .sidebar ul li input::-webkit-input-placeholder {
     opacity: 0;
@@ -193,11 +211,6 @@ body {
 
 .active ul li input::placeholder {
     opacity: 1;
-}
-
-.sidebar ul li input:hover {
-    background-color: #fff;
-    color: #1d1b31 !important;
 }
 
 .searchbar .icon {
