@@ -90,9 +90,12 @@ body {
     color: #fff;
 } */
 
+#searchbtn {
+    cursor: pointer;
+}
+
 #searchbtn .icon {
     position: relative;
-   
 }
 
 .sidebar ul li {
@@ -245,7 +248,6 @@ body {
     margin: 10px;
     height: 20px;
     min-width: 20px;
-    border-radius: 12px;
     text-align: center;
 }
 
